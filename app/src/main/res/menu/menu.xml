@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- app:showAsAction="ifRoom": Agrega el icono en la barra si hay espacio para ello. Sino lo muestra en el overflow Menu -->
+    <!-- app:showAsAction="never": Lo muestra siempre en el Overflow Menu y nunca en la barra -->
+    <!-- app:showAsAction="always": Siempre lo muestra en la barra de acciones -->
+    <!-- app:showAsAction="withText": Añade el texto introducido en title -->
+    <!-- app:showAsAction="collapseActionView": Puede verse en forma reducida, ejemplo Acción de Busqueda -->
 
     <item
         android:id="@+id/new_email"
         android:icon="@drawable/ic_create"
         android:title="New Email"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/send_email"
         android:title="Send Email"
-        app:showAsAction="never">
+        app:showAsAction="ifRoom|withText">
         <menu>
             <item
-                android:id="@+id/send_mail_secure"
-                android:title="Send Email Secure"
+                android:id="@+id/send_email_secure"
                 android:orderInCategory="12"
-                />
-            <item
-                android:id="@+id/send_mail_unsecure"
-                android:title="Send Email Unsecure"
-                android:orderInCategory="11"
-                />
+                android:title="Send Email Secure"></item>
 
+            <item
+                android:id="@+id/send_email_unsecure"
+                android:orderInCategory="11"
+                android:title="Send Email UnSecure"></item>
         </menu>
     </item>
     <item
         android:id="@+id/update_settings"
-        android:title="Update Settings"
-        app:showAsAction="never"
-        />
-
+        android:title="update"
+        app:showAsAction="never" />
 </menu>

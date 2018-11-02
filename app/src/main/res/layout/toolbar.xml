@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_toolbar"
     android:minHeight="?attr/actionBarSize"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:titleTextColor="@color/colorWhiteApp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="4dp"
+    app:titleTextColor="@android:color/white"
     android:background="@color/colorPrimary"
     android:theme="@style/AppThemeCustomToolbar"
     app:popupTheme="@style/AppThemeCustomMenuToolbar">
+
+    <!-- @style/ThemeOverlay.AppCompat.Dark.ActionBar - Pone las letras Blancas -->
+    <!-- @style/ThemeOverlay.AppCompat.Light - Pone el popup del Menú Blanco -->
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:text="Toolbar"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </android.support.v7.widget.Toolbar>
