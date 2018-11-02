@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/new_email"
+        android:icon="@drawable/ic_create"
+        android:title="New Email"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/send_email"
+        android:title="Send Email"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/send_mail_secure"
+                android:title="Send Email Secure"
+                android:orderInCategory="12"
+                />
+            <item
+                android:id="@+id/send_mail_unsecure"
+                android:title="Send Email Unsecure"
+                android:orderInCategory="11"
+                />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/update_settings"
+        android:title="Update Settings"
+        app:showAsAction="never"
+        />
+
+</menu>

@@ -5,6 +5,10 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,5 +41,50 @@ public class MainActivity extends AppCompatActivity {
             icon.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
             getSupportActionBar().setHomeAsUpIndicator(icon);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        menuIconColor(menu, R.color.colorWhiteApp);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public void menuIconColor(Menu menu, int color){
+        for(int i=0; i<menu.size(); i++){
+            Drawable drawable = menu.getItem(i).getIcon();
+            if(drawable != null){
+                drawable.mutate();
+                drawable.setColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                Log.d("TAG1", "homeButton - onOptionsItemsSelected");
+                break;
+            case R.id.new_email:
+                Log.d("TAG1", "New Email");
+                break;
+            case R.id.send_email:
+                Log.d("TAG1", "Send Email");
+                break;
+            case R.id.send_mail_secure:
+                Log.d("TAG1", "Send mail Secure");
+                break;
+            case R.id.send_mail_unsecure:
+                Log.d("TAG1", "Send  Email Unsecure");
+                break;
+            case R.id.update_settings:
+                Log.d("TAG1", "update settings");
+                break;
+            default:
+                    //Error Desconocido
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
